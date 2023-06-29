@@ -16,6 +16,8 @@ The website [Polarsteps.com](http://polarsteps.com/ "Polarsteps.com") provides a
 It features a mobile app that records GPS locations, referred to as "Steps," allowing users to add images and text to accompany their journeys. 
 With this plugin, you can effortlessly import your Polarsteps "Steps" and automatically generate blog posts based on your trip.
 
+See the Github-Repo here: [https://github.com/jan-muller/polarsteps-integration](https://github.com/jan-muller/polarsteps-integration "https://github.com/jan-muller/polarsteps-integration")
+
 == Key features ==
 * Import Polarsteps Steps: Connect your Polarsteps account to WordPress and easily import your Steps directly into your website.
 * Automatic Blogpost Generation: The plugin automatically generates a blog posts containing one or more step(s). It combines images and text from your Polarsteps account to create a blog post.
