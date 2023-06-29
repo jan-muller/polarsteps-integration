@@ -12,7 +12,7 @@
  * @package           Polarsteps_Integration
  *
  * @wordpress-plugin
- * Plugin Name:       Polarsteps integration
+ * Plugin Name:       Polarsteps Importer
  * Plugin URI: 		  https://github.com/jan-muller/polarsteps-integration
  * Description:       Import steps from Polarsteps.com and convert them into a blogpost.
  * Version:           1.0.0

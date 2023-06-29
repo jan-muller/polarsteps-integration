@@ -108,7 +108,7 @@ class Polarsteps_Integration_Admin
 	}
 
 	/**
-	 * Registers the required Settings for Polarsteps Integration
+	 * Registers the required Settings for Polarsteps Importer
 	 *
 	 * @since 1.0.0
 	 * @return void
@@ -147,7 +147,7 @@ class Polarsteps_Integration_Admin
 	{
 
 		add_options_page(
-			'Polarsteps Integration Settings',
+			'Polarsteps Importer Settings',
 			'Polarsteps Settings',
 			'manage_options',
 			'polarsteps-settings',
@@ -181,7 +181,7 @@ class Polarsteps_Integration_Admin
 
 			<h1>
 				<?php
-				_e('Polarsteps Integration Settings', 'polarsteps-integration');
+				_e('Polarsteps Importer Settings', 'polarsteps-integration');
 				?>
 			</h1>
 
