@@ -1,0 +1,34 @@
+{
+  "name": "simple-lightbox",
+  "version": "2.1.0",
+  "description": "Lightweight plugin for lightbox images and galleries based on jquery api",
+  "main": "src/simpleLightbox.js",
+  "license": "MIT",
+  "author": {
+    "email": "dbrekalo@gmail.com",
+    "name": "Damir Brekalo"
+  },
+  "scripts": {
+    "watch": "grunt watch",
+    "build": "grunt build",
+    "bump:patch": "grunt bump:patch",
+    "bump:minor": "grunt bump:minor",
+    "bump:major": "grunt bump:major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbrekalo/simpleLightbox"
+  },
+  "devDependencies": {
+    "bourbon": "^4.2.7",
+    "grunt": "^1.0.3",
+    "grunt-bump": "^0.8.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^20.1.0",
+    "grunt-include-replace": "^5.0.0",
+    "grunt-sass": "^2.1.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
