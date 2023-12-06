@@ -108,7 +108,7 @@ class Polarsteps_Integration_Admin
 	}
 
 	/**
-	 * Registers the required Settings for Polarsteps Importer
+	 * Registers the required Settings for Importer for Polarsteps
 	 *
 	 * @since 1.0.0
 	 * @return void
@@ -148,15 +148,15 @@ class Polarsteps_Integration_Admin
 
 		add_options_page(
 			'Polarsteps Importer Settings',
-			'Polarsteps Settings',
+			'Polarsteps Importer Settings',
 			'manage_options',
 			'polarsteps-settings',
 			array($this, 'render')
 		);
 
 		add_options_page(
-			'Polarsteps Steps',
-			'Polarsteps Steps',
+			'Imported Polarsteps',
+			'Imported Polarsteps',
 			'manage_options',
 			'polarsteps-steps',
 			array($this, 'render_steps')
@@ -279,7 +279,7 @@ class Polarsteps_Integration_Admin
 	?>
 		<div class="wrap polarsteps-steps">
 
-			<h1><?php _e('Polarsteps Steps', 'polarsteps-integration'); ?></h1>
+			<h1><?php _e('Imported Polarsteps steps', 'polarsteps-integration'); ?></h1>
 
 			<div style="margin-bottom: 15px;">
 				<a href="<?php admin_url(); ?>options-general.php?page=polarsteps-steps&action=get_steps" id="get_steps" class="button button-primary" value="<?php _e('Update steps from polarsteps', 'polarsteps-integration'); ?>"><?php _e('Update steps from polarsteps', 'polarsteps-integration'); ?></a>

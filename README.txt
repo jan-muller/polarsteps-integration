@@ -41,7 +41,7 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `polarsteps-integration.php` to the `/wp-content/plugins/` directory
+1. Upload to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Register an account for Polarsteps (if not already done)
 1. Create Trip (with at least one Step) on Polarsteps.com and make sure it is public
