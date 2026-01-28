@@ -135,6 +135,20 @@ class Polarsteps_Integration_Admin
 			'description'  => __('Day of the week you want to generate a post.'),
 			'default'      => 0,
 		));
+
+		register_setting('polarsteps_settings', 'polarsteps_default_category', array(
+			'show_in_rest' => true,
+			'type'         => 'integer',
+			'description'  => __('Default category for generated posts.', 'polarsteps-integration'),
+			'default'      => 0,
+		));
+
+		register_setting('polarsteps_settings', 'polarsteps_use_step_date_for_post_date', array(
+			'show_in_rest' => true,
+			'type'         => 'boolean',
+			'description'  => __('Use the date of the first Polarsteps step as the publish date for the generated post.', 'polarsteps-integration'),
+			'default'      => false,
+		));
 	}
 
 	/**
@@ -218,6 +232,27 @@ class Polarsteps_Integration_Admin
 						</td>
 					</tr>
 
+					<tr>
+						<?php
+						$selected_category = (int) get_option('polarsteps_default_category');
+						if (!$selected_category) {
+							$selected_category = (int) get_option('default_category');
+						}
+						$categories = get_categories(array('hide_empty' => false));
+						?>
+						<th scope="row"><label for="polarsteps_default_category"><?php _e('Default category for generated posts', 'polarsteps-integration'); ?></label>
+						</th>
+						<td>
+							<select name="polarsteps_default_category" id="polarsteps_default_category">
+								<?php foreach ($categories as $category) : ?>
+									<option value="<?php echo esc_attr($category->term_id); ?>" <?php selected($selected_category, $category->term_id); ?>>
+										<?php echo esc_html($category->name); ?>
+									</option>
+								<?php endforeach; ?>
+							</select>
+						</td>
+					</tr>
+
 
 					<tr>
 						<th scope="row"><label for="polarsteps_max_number_of_steps_per_post"><?php _e('Maximum number of steps you want to have in one post. (-1 means unlimited)', 'polarsteps-integration'); ?></label>
@@ -251,6 +286,20 @@ class Polarsteps_Integration_Admin
 									'<a href="' . get_admin_url() . 'options-general.php?page=polarsteps-steps">',
 									'</a>'
 								); ?></p>
+						</td>
+					</tr>
+
+					<tr>
+						<th scope="row">
+							<label for="polarsteps_use_step_date_for_post_date">
+								<?php _e('Use Polarsteps date for creating post', 'polarsteps-integration'); ?>
+							</label>
+						</th>
+						<td>
+							<label for="polarsteps_use_step_date_for_post_date">
+								<input name="polarsteps_use_step_date_for_post_date" type="checkbox" id="polarsteps_use_step_date_for_post_date" value="1" <?php checked(get_option('polarsteps_use_step_date_for_post_date'), '1'); ?> />
+								<?php _e('If checked, the first Polarsteps step date will be used as the date of the generated WordPress post.', 'polarsteps-integration'); ?>
+							</label>
 						</td>
 					</tr>
 

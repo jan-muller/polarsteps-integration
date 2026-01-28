@@ -15,7 +15,7 @@
  * Plugin Name:       Importer for Polarsteps
  * Plugin URI: 		  https://github.com/jan-muller/polarsteps-integration
  * Description:       Import steps from Polarsteps.com and convert them into a blogpost.
- * Version:           1.0.0
+ * Version:           1.0.2
  * Author:            Jan Muller
  * Author URI:        https://github.com/jan-muller
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('POLARSTEPS_INTEGRATION_VERSION', '1.0.0');
+define('POLARSTEPS_INTEGRATION_VERSION', '1.0.2');
 
 /**
  * The code that runs during plugin activation.

@@ -71,6 +71,16 @@ class Polarsteps_Integration_Generator
         $added_steps = [];
         $i = 0;
 
+        $use_step_date_for_post_date = get_option('polarsteps_use_step_date_for_post_date');
+        $post_date = null;
+
+        if ($use_step_date_for_post_date && !empty($new_steps)) {
+            $first_step = reset($new_steps);
+            if (!empty($first_step->start_time)) {
+                $post_date = date('Y-m-d H:i:s', strtotime($first_step->start_time));
+            }
+        }
+
         $post_title = '#' . $post_number . ' ';
         $post_content = '';
 
@@ -107,14 +117,24 @@ class Polarsteps_Integration_Generator
             array_push($added_steps, $step->id);
         }
 
+        $default_category = (int) get_option('polarsteps_default_category');
+        if (!$default_category) {
+            $default_category = (int) get_option('default_category');
+        }
+
         $wordpress_post = array(
             'post_title' => $post_title,
             'post_content' => $post_content,
             'post_status' => 'publish',
-            'post_category' => [get_option('default_category')],
+            'post_category' => [$default_category],
             'post_author' => 1,
             'post_type' => 'post'
         );
+
+        if ($post_date) {
+            $wordpress_post['post_date'] = $post_date;
+            $wordpress_post['post_date_gmt'] = get_gmt_from_date($post_date);
+        }
 
         $post_id = wp_insert_post($wordpress_post);
 
